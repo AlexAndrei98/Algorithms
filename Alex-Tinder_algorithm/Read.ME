@@ -1,0 +1,35 @@
+Author:
+Alexandru Andrei 
+
+Date:
+9/5/2018
+
+Development tools:
+This code was developed using python with a jupyter notebook on a Windows 10 and Mac machine.
+ 
+Submission details:
+I have submitted three files. The tinder.py file contains the logic for the matching.
+The util.py contains two functions that I used to create the hash tables and to print in the correct format
+The get_matches.py is the file that combines all of the functions together. 
+
+Requirements:
+The only requirement to run this program is to make sure that you have the package numpy installed on your python environment.
+If numpy is not present on your machine the run "pip install numpy" from your terminal to install the package 
+Approach:
+
+(1) Assign all mans and womans to be unmatched.
+
+(2) Take any unmatched man up for consideration, "man".
+		- If their preference list is empty, remove them from consideration 
+		  and go to (2).)
+		- Otherwise, consider their most preferred woman, "woman".
+		- If "woman" currently has space for another man, match "man" to "woman".
+		- Otherwise, if "woman" has no space currently:
+			- For each man currently matched to "woman", woman_match:
+				- If "woman" prefers "man" to woman_match and "woman" is not yet matched to "man",
+				  unmatch woman_match from "woman" and match "woman" to "man".
+				- Otherwise, remove "man" from "womans"'s preference list and leave "man"
+				  unmatched.
+
+(3) Go to (2) until there are no unmatched candidates up for consideration,
+	then end.
